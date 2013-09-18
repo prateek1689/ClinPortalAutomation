@@ -24,11 +24,11 @@ public class LoginPageTest extends Browser{
 	    public void testLoginSuccess() {
 		driverLogin = driver;
 	    	
-		driverLogin.get("https://clinpd5.cbmi.wucon.wustl.edu/clinportal/RedirectHome.do");
+		//driverLogin.get("https://clinpd5.cbmi.wucon.wustl.edu/clinportal/RedirectHome.do");
 		logger.info("testLogin() driver : = > " + driverLogin);
 		actualTitle = driverLogin.getTitle();
 
-		String expectedTitle = "Partner Login";
+		String expectedTitle = "ClinPortal";
 		LoginPage loginPage = PageFactory.initElements(driverLogin,
 			LoginPage.class);
 		loginPage.login(login, pass);
