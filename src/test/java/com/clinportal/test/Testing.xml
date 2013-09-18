@@ -1,0 +1,23 @@
+<!DOCTYPE suite SYSTEM "http://beust.com/testng/testng-1.0.dtd" >
+<suite name="My test suite" preserve-order="true">
+	<test name="testLogin">
+		<parameter name="browser" value="FF"></parameter>
+		<classes>
+			<class name="com.clinportal.test.LoginPageTest"></class>
+		</classes>
+	</test>
+
+	<test name="testLogin on IE">
+		<parameter name="browser" value="IE"></parameter>
+		<classes>
+			<class name="com.clinportal.test.LoginPageTest"></class>
+		</classes>
+	</test>
+
+	<test name="testLogin on Chrome">
+		<parameter name="browser" value="CHROME"></parameter>
+		<classes>
+			<class name="com.clinportal.test.LoginPageTest"></class>
+		</classes>
+	</test>
+</suite>

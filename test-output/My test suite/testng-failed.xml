@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [My test suite]">
+  <parameter name="browser" value="CHROME"/>
+  <test name="testLogin(failed)">
+    <parameter name="browser" value="FF"/>
+    <classes>
+      <class name="com.clinportal.test.LoginPageTest">
+        <methods>
+          <include name="testLoginSuccess"/>
+        </methods>
+      </class> <!-- com.clinportal.test.LoginPageTest -->
+    </classes>
+  </test> <!-- testLogin(failed) -->
+  <test name="testLogin on IE(failed)">
+    <parameter name="browser" value="IE"/>
+    <classes>
+      <class name="com.clinportal.test.LoginPageTest">
+        <methods>
+          <include name="testLoginSuccess"/>
+        </methods>
+      </class> <!-- com.clinportal.test.LoginPageTest -->
+    </classes>
+  </test> <!-- testLogin on IE(failed) -->
+  <test name="testLogin on Chrome(failed)">
+    <parameter name="browser" value="CHROME"/>
+    <classes>
+      <class name="com.clinportal.test.LoginPageTest">
+        <methods>
+          <include name="testLoginSuccess"/>
+        </methods>
+      </class> <!-- com.clinportal.test.LoginPageTest -->
+    </classes>
+  </test> <!-- testLogin on Chrome(failed) -->
+</suite> <!-- Failed suite [My test suite] -->

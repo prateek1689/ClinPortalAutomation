@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="11038" started-at="2013-09-18T17:56:42Z" finished-at="2013-09-18T17:56:53Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="11038" started-at="2013-09-18T17:56:42Z" finished-at="2013-09-18T17:56:53Z">
+      <class name="com.clinportal.test.LoginPageTest">
+        <test-method status="PASS" signature="openBroswer(java.lang.String)[pri:0, instance:com.clinportal.test.LoginPageTest@4e60da68]" name="openBroswer" is-config="true" duration-ms="7108" started-at="2013-09-18T23:26:42Z" finished-at="2013-09-18T23:26:49Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[IE]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openBroswer -->
+        <test-method status="PASS" signature="testLoginSuccess()[pri:0, instance:com.clinportal.test.LoginPageTest@4e60da68]" name="testLoginSuccess" duration-ms="3919" started-at="2013-09-18T23:26:49Z" finished-at="2013-09-18T23:26:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLoginSuccess -->
+      </class> <!-- com.clinportal.test.LoginPageTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
