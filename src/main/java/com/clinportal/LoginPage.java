@@ -54,7 +54,7 @@ public class LoginPage {
 
 	    }
 
-	    // Method for login to personagraph app
+	    // Method for login to clinportal app
 	    public LoginPage login(String login, String password) {
 		enterLogin(login);
 		enterPassword(password);
