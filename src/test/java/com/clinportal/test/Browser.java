@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Optional;
@@ -18,7 +19,7 @@ import org.testng.annotations.Parameters;
  */
 public class Browser {
 
-    static WebDriver driver;
+     WebDriver driver;
 
     @BeforeMethod
     /* The annotated method will be run before all tests in this suite have run */
@@ -51,7 +52,11 @@ public class Browser {
 	    System.out.println("IE");
 	    System.setProperty("webdriver.ie.driver",
 		    "D:/WorkSpace1/ClinPortalAutomation/src/main/resources/IEDriverServer.exe");
-	    driver = new InternetExplorerDriver();
+	    DesiredCapabilities caps = DesiredCapabilities.internetExplorer();
+	    caps.setCapability(
+	        InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS,
+	        true);
+	    WebDriver driver = new InternetExplorerDriver(caps);
 	    driver.get("https://clinpd5.cbmi.wucon.wustl.edu/clinportal/RedirectHome.do");
 
 	    System.out.println("driver in open browser : " + driver);
@@ -60,7 +65,7 @@ public class Browser {
 
     }
 
-    //@AfterSuite
+    @AfterSuite
     /* this annotation would run once test script execution would complete */
     public void closeBrowser() {
 	try {
