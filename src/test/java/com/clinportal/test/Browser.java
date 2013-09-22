@@ -14,12 +14,12 @@ import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
 /**
- * @author strumsoft
+ * @author kuldeep
  * 
  */
 public class Browser {
 
-     WebDriver driver;
+    WebDriver driver;
 
     @BeforeMethod
     /* The annotated method will be run before all tests in this suite have run */
@@ -37,7 +37,7 @@ public class Browser {
 	    driver = new FirefoxDriver();
 	    driver.get("https://localhost:8443/PGAdmin/identity/login");
 	    driver.navigate().to(
-		    "https://clinpd5.cbmi.wucon.wustl.edu/clinportal/RedirectHome.do");
+		    "https://clinpd3.cbmi.wucon.wustl.edu/clinportal/RedirectHome.do");
 	    System.out.println("driver in open browser  ==== >: " + driver);
 
 	} else if (browser.equalsIgnoreCase("CHROME")) {
@@ -45,7 +45,7 @@ public class Browser {
 	    System.setProperty("webdriver.chrome.driver",
 		    "D:/WorkSpace1/ClinPortalAutomation/src/main/resources/chromedriver.exe");
 	    driver = new ChromeDriver();
-	    driver.get("https://clinpd5.cbmi.wucon.wustl.edu/clinportal/RedirectHome.do");
+	    driver.get("https://clinpd3.cbmi.wucon.wustl.edu/clinportal/RedirectHome.do");
 	    System.out.println("driver in open browser  ==== >: " + driver);
 
 	} else {
@@ -56,8 +56,8 @@ public class Browser {
 	    caps.setCapability(
 	        InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS,
 	        true);
-	    WebDriver driver = new InternetExplorerDriver(caps);
-	    driver.get("https://clinpd5.cbmi.wucon.wustl.edu/clinportal/RedirectHome.do");
+	    driver = new InternetExplorerDriver(caps);
+	    driver.get("https://clinpd3.cbmi.wucon.wustl.edu/clinportal/RedirectHome.do");
 
 	    System.out.println("driver in open browser : " + driver);
 
@@ -65,7 +65,7 @@ public class Browser {
 
     }
 
-    @AfterSuite
+   //@AfterSuite
     /* this annotation would run once test script execution would complete */
     public void closeBrowser() {
 	try {
