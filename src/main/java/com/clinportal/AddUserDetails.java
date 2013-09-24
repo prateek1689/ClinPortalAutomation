@@ -35,7 +35,7 @@ public class AddUserDetails {
 	private WebElement country;
 	@FindBy(how = How.ID_OR_NAME, using = "faxNumber")
 	private WebElement faxNumber;
-	@FindBy(how = How.ID_OR_NAME, using = "displaydepartmentId")
+	@FindBy(how = How.ID_OR_NAME, using = "departmentIdarrow")
 	private WebElement department;
 	@FindBy(how = How.ID_OR_NAME, using = "confirmEmailAddress")
 	private WebElement conEmailAdd;
@@ -49,9 +49,14 @@ public class AddUserDetails {
 	private WebElement phoneNumber;
 	@FindBy(how = How.ID, using = "institutionIdarrow")
 	private WebElement institution;
-	@FindBy(how = How.ID, using = "newInstitution")
-	private WebElement addNewInsti;
-	
+	@FindBy(how = How.ID, using = "cancerResearchGroupIdarrow")
+	private WebElement researchGroup;
+	@FindBy(how = How.ID, using = "rolearrow")
+	private WebElement rolearrow;
+	@FindBy(how = How.ID, using = "comments")
+	private WebElement comments;
+	@FindBy(how = How.ID, using = "btnUserSumbit")
+	private WebElement btnUserSumbit;
 
 	public AddUserDetails(WebDriver driver) {
 		super();
@@ -104,9 +109,11 @@ public class AddUserDetails {
 	}
 
 	public void department() {
-		Select dept = new Select(department);
-		dept.selectByVisibleText("Canada");
-		// department.click();
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		department.click();
+		driver.findElement(
+				By.xpath("/html/body/table/tbody/tr[2]/td/table/tbody/tr/td/table[2]/tbody/tr/td/table/tbody/tr[4]/td/table/tbody/tr[10]/td[3]/div/ul/li[7]"))
+				.click();
 	}
 
 	public void conEmailAdd(String conemailId) {
@@ -144,16 +151,37 @@ public class AddUserDetails {
 				By.xpath("/html/body/table/tbody/tr[2]/td/table/tbody/tr/td/table[2]/tbody/tr/td/table/tbody/tr[4]/td/table/tbody/tr[9]/td[7]/div/ul/li[6]"))
 				.click();
 	}
-	
-	public void addNewInsti(){
+
+	public void researchGroup() {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		addNewInsti.click();
+		researchGroup.click();
+		driver.findElement(
+				By.xpath("/html/body/table/tbody/tr[2]/td/table/tbody/tr/td/table[2]/tbody/tr/td/table/tbody/tr[4]/td/table/tbody/tr[10]/td[7]/div/ul/li[4]"))
+				.click();
 	}
-	
+
+	public void role() {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		rolearrow.click();
+		driver.findElement(
+				By.xpath("/html/body/table/tbody/tr[2]/td/table/tbody/tr/td/table[2]/tbody/tr/td/table/tbody/tr[5]/td/table/tbody/tr[2]/td[3]/div/ul/li[2]"))
+				.click();
+	}
+
+	public void comments(String commentMessage) {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		comments.sendKeys(commentMessage);
+
+	}
+
+	public void btnUserSumbit() {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		btnUserSumbit.click();
+	}
 
 	public AddUserDetails fillUserDetails(String email, String lname,
 			String streetName, String number, String conemailId, String name,
-			String cityName, String zipcode, String phoneNo) {
+			String cityName, String zipcode, String phoneNo, String comtMess) {
 
 		emailAdd(email);
 		lastName(lname);
@@ -161,14 +189,17 @@ public class AddUserDetails {
 		state();
 		country();
 		faxNumber(number);
-		// department();
+		department();
 		conEmailAdd(conemailId);
 		firstName(name);
 		city(cityName);
 		zipCode(zipcode);
 		phoneNumber(phoneNo);
 		institution();
-		//addNewInsti();
+		researchGroup();
+		role();
+		comments(comtMess);
+		btnUserSumbit();
 		return PageFactory.initElements(driver, AddUserDetails.class);
 
 	}

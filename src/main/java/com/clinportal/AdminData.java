@@ -13,38 +13,20 @@ import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
 public class AdminData {
-	// private static String login = "kmatharasi@path.wustl.edu";
-	// private static String pass = "Master6";
 
-	/*
-	 * public static void main(String args[]) {
-	 * System.setProperty("webdriver.chrome.driver",
-	 * "D:/WorkSpace1/ClinPortalAutomation/src/main/resources/chromedriver.exe"
-	 * ); driverLogin = new ChromeDriver();
-	 * 
-	 * driverLogin
-	 * .get("https://clinpd3.cbmi.wucon.wustl.edu/clinportal/Login.do");
-	 * 
-	 * LoginPage loginPage = PageFactory.initElements(driverLogin,
-	 * LoginPage.class); loginPage.login(login, pass);
-	 * 
-	 * driverLogin.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-	 * 
-	 * WebElement element =driverLogin.findElement(By.xpath(
-	 * "/html/body/table/tbody/tr/td/table/tbody/tr[2]/td/table/tbody/tr/td[2]/div/div/table/tbody/tr/td[2]/table/tbody/tr/td[2]/em"
-	 * )); //Actions actions = new Actions(driverLogin);
-	 * //actions.doubleClick(element); //System.out.println(element.getText());
-	 * element.click();
-	 * 
-	 * //driverLogin.quit();
-	 */
 	WebDriver driver;
+	// @FindBy(how = How.XPATH, using =
+	// "/html/body/table/tbody/tr/td/table/tbody/tr[2]/td/table/tbody/tr/td[2]/div/div/table/tbody/tr/td[2]/table/tbody/tr/td[2]/em")
+	// @FindBy(how = How.XPATH, using =
+	// "/html/body/table/tbody/tr/td/table/tbody/tr[2]/td/table/tbody/tr/td[2]/div/div/table/tbody/tr/td[2]/table/tbody/tr/td[2]/em")
 	@FindBy(how = How.XPATH, using = "/html/body/table/tbody/tr/td/table/tbody/tr[2]/td/table/tbody/tr/td[2]/div/div/table/tbody/tr/td[2]/table/tbody/tr/td[2]/em")
 	private WebElement adminDataBtn;
 	@FindBy(how = How.ID, using = "ext-gen73")
 	private WebElement userTab;
 	@FindBy(how = How.ID, using = "ext-gen117")
 	private WebElement addUserBtn;
+	@FindBy(how = How.ID, using = "ext-gen203")
+	private WebElement addClinicalStudy;
 
 	public AdminData(WebDriver driver) {
 		this.driver = driver;
@@ -64,21 +46,24 @@ public class AdminData {
 		// WebElement selectgender = driver.findElement(By.id("gender"));
 		// selectgender.sendKeys("Male");
 
-
 		userTab.click();
 	}
 
 	// Method for locating add user tab
-	/*public void addUserBtn() {
+	/*
+	 * public void addUserBtn() { driver.manage().timeouts().implicitlyWait(10,
+	 * TimeUnit.SECONDS); addUserBtn.click();
+	 * 
+	 * }
+	 */
+	public void addClinicalStudy() {
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		addUserBtn.click();
-
 	}
-*/
+
 	public AdminData adminData() {
 		adminDataBtn();
 		userTab();
-		//addUserBtn();
+		// addUserBtn();
 		return PageFactory.initElements(driver, AdminData.class);
 	}
 

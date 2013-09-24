@@ -24,16 +24,17 @@ public class AdminDataTest extends Browser {
 	private static String pass = "Master6";
 	//private String actualTitle = "";
 	
-	String email ="xyz@gmail.com";
+	String email ="xyz2@gmail.com";
 	String lname = "jan";
 	String streetName = "200";
 	String number = "1234567890";
-	String conemailId = "xyz@gmail.com";
+	String conemailId = "xyz2@gmail.com";
 	String name = "abc";
 	String cityName = "xyz";
 	String zipcode = "452009";
 	String phoneNo = "1234567890";
 	
+	String commMessage= "Hi";
 	
 	WebDriver driverAdminData;
 
@@ -50,7 +51,7 @@ public class AdminDataTest extends Browser {
 		adminData.adminData();
 		
 		AddUserDetails addUserDetails = PageFactory.initElements(driverAdminData, AddUserDetails.class);
-		addUserDetails.fillUserDetails(email, lname, streetName, number, conemailId, name, cityName, zipcode, phoneNo);
+		addUserDetails.fillUserDetails(email, lname, streetName, number, conemailId, name, cityName, zipcode, phoneNo, commMessage);
 		
 
 	}
