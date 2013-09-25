@@ -15,13 +15,9 @@ import org.openqa.selenium.support.PageFactory;
 public class AdminData {
 
 	WebDriver driver;
-	// @FindBy(how = How.XPATH, using =
-	// "/html/body/table/tbody/tr/td/table/tbody/tr[2]/td/table/tbody/tr/td[2]/div/div/table/tbody/tr/td[2]/table/tbody/tr/td[2]/em")
-	// @FindBy(how = How.XPATH, using =
-	// "/html/body/table/tbody/tr/td/table/tbody/tr[2]/td/table/tbody/tr/td[2]/div/div/table/tbody/tr/td[2]/table/tbody/tr/td[2]/em")
-	@FindBy(how = How.XPATH, using = "/html/body/table/tbody/tr/td/table/tbody/tr[2]/td/table/tbody/tr/td[2]/div/div/table/tbody/tr/td[2]/table/tbody/tr/td[2]/em")
+	@FindBy(how = How.ID, using = "ext-gen29")
 	private WebElement adminDataBtn;
-	@FindBy(how = How.ID, using = "ext-gen73")
+	@FindBy(how = How.ID, using = "ext-gen75")
 	private WebElement userTab;
 	@FindBy(how = How.ID, using = "ext-gen117")
 	private WebElement addUserBtn;
@@ -43,9 +39,7 @@ public class AdminData {
 	// Method for locating user tab
 	public void userTab() {
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		// WebElement selectgender = driver.findElement(By.id("gender"));
-		// selectgender.sendKeys("Male");
-
+		
 		userTab.click();
 	}
 
